@@ -1,0 +1,74 @@
+Mongo Db commands for Databases:
+ 
+View all databases
+show dbs 
+
+Create a new or swich databases
+use dbName
+
+View Current databases
+db
+
+Delete Databases
+db.dropDatabase()
+
+
+MongoDB commands for collection:
+
+Show Collections
+show collections
+
+Create a collection named 'mycomments'
+db.createCollection('mycomments')
+
+Delete a collection named 'mycomments'
+db.mycomments.drop()
+
+MongoDb commands for one  Rows:
+show all Rows in collection
+db.comments.find()
+
+Insert Rows
+db.comments.insert({
+    'name':'Akshat',
+    'lang':'JavaScript',
+    'member_since':5
+})
+
+MongoDB commands for Many Rows:
+db.comments.insertMany([{
+    'name':'Akshat',
+    'lang':'JavaScript',
+    'member_since':5 
+    },
+    {'name':'Akshat',
+    'lang':'Java',
+    'member_since':7
+    },
+    {'name':'Akshat',
+    'lang':'python',
+    'member_since':8
+}])
+
+db.comments.insert({
+    'name':'Akshat',
+    'lang':'JavaScript',
+    'member_since':5,
+    'date': new Date()})
+
+MongoDB commamnds to search in databases
+ db.comments.find(lang:'python')
+
+Limit the number of rows in output
+db.comments.find().limit()
+
+Count the number of rows in output 
+db.comments.find().count()
+
+Commands to sort in ascending order 
+db.comments.find().sort({member_since:1}).pretty()
+
+Commands to sort in descending order 
+db.comments.find().sort({meber_since:-1}).pretty()
+
+
