@@ -72,3 +72,23 @@ Commands to sort in descending order
 db.comments.find().sort({meber_since:-1}).pretty()
 
 
+Update a Row
+db.comments.update({name:'Shubham'},
+{'name':'harry',
+'lang': 'Js',
+'meber_since':1},
+)
+ 
+If you wanna update something that is not on the database
+db.comments.update({name:'Shubham'},
+{'name':'harry',
+'lang': 'Js',
+'meber_since':1},{upsert=true}
+)
+ 
+#More update operators in MongoDB search on ggoogle for help 
+
+Less than operator: db.comments.find({member_since:{$lt:45}})
+less than equal to: db.comments.find({member_since:{$lte:45}})
+Greater than operaor: db.comments.find({member_since:{$gt:45}})
+Greater than equal to : db.comments.find({member_since:{$gte:45}})
